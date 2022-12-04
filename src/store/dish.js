@@ -17,7 +17,6 @@ export const useDishStore = create((set,get) => ({
     const data =  await axios.get(`http://localhost:5050/get_all_dishes?page=${page}`)
     console.log(">>>>", data);
     if(data.data.status === 'success'){
-        console.log(">>>>count", Math.ceil(data.data.data.countDocument/10));
         set(() => ({allDishes: data.data.data.dishes, filterList: data.data.data.dishes, paginationCount: Math.ceil(data.data.data.countDocument/10)}))
     }
   },
