@@ -12,7 +12,7 @@ function Dish() {
 
     const saveDish = async () => {
         if(!isEmpty(dish.name) && !isEmpty(dish.ingredients)){
-            const result = await axios.post(`http://localhost:5050/add_dishes`, dish)
+            const result = await axios.post(`https://dishes-server.onrender.com/add_dishes`, dish)
             if(result.data.status === 'success'){
                 window.location.reload();
             }
